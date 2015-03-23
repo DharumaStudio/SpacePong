@@ -216,8 +216,6 @@ MonoBehaviour:
   playerBase: {fileID: 133670, guid: c695b81852a1e46abb821f1f73f0c78e, type: 2}
   player: {fileID: 133764, guid: 20f9cf6e1826f420ea5407b7a6b5640a, type: 2}
   ia: {fileID: 149890, guid: a258a40447183490eb075be40c0a9ce2, type: 2}
-  playerBullet: {fileID: 172510, guid: d48a4041970732e4e81b07df4d6db334, type: 2}
-  iaBullet: {fileID: 0}
   iaLife: 0
   playerLife: 0
 --- !u!4 &830209463

@@ -19,7 +19,6 @@ public class MeteorManager : MonoBehaviour {
 		if( maxMeteorsOnScreen == 0 ) maxMeteorsOnScreen = 5;
 
 		_meteorsHierarchy = GameObject.Find( "Meteors" );
-
 	
 	}
 	
