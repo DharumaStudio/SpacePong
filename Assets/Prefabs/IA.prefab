@@ -41,9 +41,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 444878}
   - 60: {fileID: 6029464}
+  - 114: {fileID: 11453286}
   m_Layer: 0
   m_Name: IA
-  m_TagString: Untagged
+  m_TagString: IA
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,6 +141,21 @@ PolygonCollider2D:
       - {x: -.287256747, y: -.155501157}
       - {x: -.210445106, y: .0741084069}
       - {x: -.139552206, y: .253937691}
+--- !u!114 &11453286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efd4b1be0e544e6da596f345eddcb16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceShipsStandard: []
+  spaceShipPower: []
+  rechargeTimeStandard: 0
+  rechargeTimePower: 0
 --- !u!212 &21201702
 SpriteRenderer:
   m_ObjectHideFlags: 1
