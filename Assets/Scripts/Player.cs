@@ -28,6 +28,8 @@ public class Player : Entity {
 		#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
 		vertical = Input.GetAxis("Vertical");
 		myTransform.Translate( vertical * Time.deltaTime * speed, 0, myTransform.position.z );
+
+		limitMovement();
 		#endif
 	}
 

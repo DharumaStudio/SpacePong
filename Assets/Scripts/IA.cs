@@ -29,6 +29,8 @@ public class IA : Entity {
 			
 			iaInstance.transform.position = new Vector3( pos.x, towards.y, 0 );
 		}
+
+		limitMovement();
 	}
 
 	private GameObject _getClosestObject( GameObject observer, string tag )

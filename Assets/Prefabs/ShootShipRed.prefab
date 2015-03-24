@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 480464}
   - 212: {fileID: 21205642}
   - 95: {fileID: 9531986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PropulsionFireCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,9 @@ GameObject:
   - 4: {fileID: 400698}
   - 212: {fileID: 21255964}
   - 60: {fileID: 6001866}
+  - 50: {fileID: 5055478}
   - 114: {fileID: 11467354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootShipRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +46,7 @@ GameObject:
   - 4: {fileID: 490346}
   - 212: {fileID: 21212816}
   - 95: {fileID: 9535406}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PropulsionFireRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ GameObject:
   - 4: {fileID: 446436}
   - 212: {fileID: 21253246}
   - 95: {fileID: 9500422}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PropulsionFireLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +121,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400698}
   m_RootOrder: 2
+--- !u!50 &5055478
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116832}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!60 &6001866
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -215,6 +231,7 @@ MonoBehaviour:
   speed: 1.25
   frequency: 5
   magnitude: 1.25
+  life: 0
   direction: 0
 --- !u!212 &21205642
 SpriteRenderer:

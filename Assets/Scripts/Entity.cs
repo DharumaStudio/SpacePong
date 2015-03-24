@@ -68,6 +68,15 @@ public abstract class Entity : MonoBehaviour {
 		currentRechargeTime = 0;
 	}
 
+	protected virtual void limitMovement()
+	{
+		PolygonCollider2D collider = myTransform.GetComponent<PolygonCollider2D>();
+		float cameraLimit = Camera.main.orthographicSize - collider.bounds.size.y;
+		
+		float limitY = Mathf.Clamp( transform.position.y, cameraLimit * -1.0f, cameraLimit );
+		myTransform.position = new Vector2( transform.position.x, limitY );
+	}
+
 	private SpaceShipType _getSpaceShipType()
 	{
 		SpaceShipType type = SpaceShipType.NONE;
