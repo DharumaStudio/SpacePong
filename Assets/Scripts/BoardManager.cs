@@ -13,6 +13,9 @@ public class BoardManager : MonoBehaviour {
 	public int iaLife;
 	public int playerLife;
 
+	private Transform _basePlayerTransform;
+	private Transform _baseIaTransform;
+
 	private const float BASE_SIZE = 0.91f;
 
 	// Use this for initialization
@@ -21,6 +24,9 @@ public class BoardManager : MonoBehaviour {
 		if( iaLife == 0 ) iaLife = 8;
 		if( playerLife == 0 ) playerLife = 8;
 
+		_basePlayerTransform = GameObject.Find("BasePlayer").transform;
+		_baseIaTransform = GameObject.Find("BaseIA").transform;
+
 		_calculateAndDrawBases();
 		_renderPlayers();
 	}
@@ -28,6 +34,8 @@ public class BoardManager : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () 
 	{
+		iaLife = _baseIaTransform.childCount;
+		playerLife = _basePlayerTransform.childCount;
 	}
 
 	/// <summary>
@@ -36,9 +44,6 @@ public class BoardManager : MonoBehaviour {
 	private void _calculateAndDrawBases()
 	{
 		Camera camera = Camera.main;
-		
-		Transform basePlayerTransform = GameObject.Find("BasePlayer").transform;
-		Transform baseIaTransform = GameObject.Find("BaseIA").transform;
 
 		for( int i = 0; i < playerLife; i++ )
 		{
@@ -47,8 +52,8 @@ public class BoardManager : MonoBehaviour {
 			GameObject instantiate = Instantiate( playerBase, spanwPosition, Quaternion.identity ) as GameObject;
 			GameObject iaInstantiate = Instantiate( iaBase, spanwPosition * -1.0f, Quaternion.identity ) as GameObject;
 
-			instantiate.transform.SetParent( basePlayerTransform );
-			iaInstantiate.transform.SetParent( baseIaTransform );
+			instantiate.transform.SetParent( _basePlayerTransform );
+			iaInstantiate.transform.SetParent( _baseIaTransform );
 		}
 	}
 
