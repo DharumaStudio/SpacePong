@@ -231,6 +231,7 @@ MonoBehaviour:
   speed: 1.25
   frequency: 5
   magnitude: 1.25
+  isEnemy: 1
   life: 0
   direction: 0
 --- !u!212 &21205642

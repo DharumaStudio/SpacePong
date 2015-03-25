@@ -18,6 +18,17 @@ public class BoardManager : MonoBehaviour {
 
 	private const float BASE_SIZE = 0.91f;
 
+
+	public int GetIaLife()
+	{
+		return iaLife;
+	}
+
+	public int GetPlayerLife()
+	{
+		return playerLife;
+	}
+
 	// Use this for initialization
 	private void Start () 
 	{

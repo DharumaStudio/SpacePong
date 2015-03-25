@@ -16,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - Spaceship
-  - 
-  - 
-  - 
-  - 
+  - IASpaceship
+  - UI
+  - PlayerSpaceShip
+  - IABattleShip
+  - PlayerBattleShip
   - 
   - 
   - 
