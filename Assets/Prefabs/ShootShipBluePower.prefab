@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 475124}
   - 212: {fileID: 21291186}
   - 95: {fileID: 9566616}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PropulsionFireLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ GameObject:
   - 60: {fileID: 6051218}
   - 50: {fileID: 5005046}
   - 114: {fileID: 11452166}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShootShipBluePower
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 4: {fileID: 434976}
   - 212: {fileID: 21249748}
   - 95: {fileID: 9533668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PropulsionFireRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 483722}
   - 212: {fileID: 21229772}
   - 95: {fileID: 9517914}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PropulsionFireCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,6 +231,7 @@ MonoBehaviour:
   speed: 1.25
   frequency: 5
   magnitude: 1.25
+  isEnemy: 0
   life: 0
   direction: 1
 --- !u!212 &21229772

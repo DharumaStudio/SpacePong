@@ -16,6 +16,7 @@ public class Bullet : MonoBehaviour {
 	private Vector3 _axis;
 	private Vector3 _pos;
 
+
 	public int getLife()
 	{
 		return life;
@@ -51,6 +52,11 @@ public class Bullet : MonoBehaviour {
 		transform.position = _pos + _axis * Mathf.Sin ( Time.time * frequency ) * magnitude;
 	}
 
+	private void OnBecameInvisible()
+	{
+		Destroy ( this.gameObject );
+	}
+
 	private void OnCollisionEnter2D( Collision2D other )
 	{
 		Debug.Log ("enter");
@@ -58,7 +64,7 @@ public class Bullet : MonoBehaviour {
 		int currentLife = life;
 
 		//Only the enemy bullets has the Mask.
-		if( layer == LayerMask.NameToLayer( LayerAux.SPACESHIP_LAYER ) )
+		if( layer == LayerMask.NameToLayer( LayerAux.IA_SPACESHIP_LAYER ) )
 		{
 			Bullet colliderBullet = other.transform.GetComponent<Bullet>();
 			int otherLife = colliderBullet.getLife();
@@ -77,14 +83,9 @@ public class Bullet : MonoBehaviour {
 		else
 		{
 			string tag = other.transform.tag;
-
-			switch( tag )
+			if( tag == TagAux.BASE_TAG || tag == TagAux.PLAYER_TAG  || tag == TagAux.PLAYER_IA_TAG )
 			{
-			case TagAux.PLAYER_TAG:
-			case TagAux.BASE_TAG:
-			case TagAux.PLAYER_IA_TAG:
 				life = 0;
-				break;
 			}
 		}
 	}
