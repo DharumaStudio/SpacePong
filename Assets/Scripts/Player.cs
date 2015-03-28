@@ -23,6 +23,7 @@ public class Player : Entity {
 		if( Input.GetKeyDown( "space" ) && currentRechargeTime >= rechargeTimeStandard )
 		{
 			fireShip();
+			restartCooldown();
 		}
 		#endif
 	}

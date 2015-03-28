@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public abstract class Entity : MonoBehaviour {
 
@@ -34,6 +35,7 @@ public abstract class Entity : MonoBehaviour {
 		if( rechargeTimeStandard == 0 ) rechargeTimeStandard = 1.5f;
 		if( rechargeTimePower == 0 ) rechargeTimePower = 4f;
 		if( speed == 0 ) speed = 10f;
+
 	}
 	
 	// Update is called once per frame
@@ -99,6 +101,21 @@ public abstract class Entity : MonoBehaviour {
 		}
 		
 		return type;
+	}
+
+	protected void restartCooldown()
+	{
+		GameObject uicd = GameObject.FindGameObjectWithTag ("UICD");
+		Animator auicd = uicd.GetComponent<Animator> ();
+		uicd.SetActive(false);
+		uicd.SetActive(true);
+		auicd.Play ("ShipCD");
+		GameObject uisd = GameObject.FindGameObjectWithTag ("UISD");
+		Animator auisd = uisd.GetComponent<Animator> ();
+		uisd.SetActive(false);
+		uisd.SetActive(true);
+		auisd.Play ("ShieldCD");
+
 	}
 
 }
