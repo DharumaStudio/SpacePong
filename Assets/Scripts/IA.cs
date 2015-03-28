@@ -11,6 +11,8 @@ public class IA : Entity {
 	protected override void Start ()
 	{
 		base.Start ();
+		if( rechargeTimeStandard == 0 ) rechargeTimeStandard = 1f;
+		if( rechargeTimePower == 0 ) rechargeTimePower = 2f;
 		myTransform = this.transform;
 		_elapsedTime = 0f;
 		_timeToAct = 3f;

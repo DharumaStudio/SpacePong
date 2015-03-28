@@ -32,11 +32,13 @@ public class Bullet : MonoBehaviour {
 
 		if ( direction == Direction.LEFT )
 		{
-			_axis = transform.right; 
+			_axis = transform.right;
+			_pos.x -= 1.5f;
 		}
 		else
 		{
 			_axis = transform.right * -1;
+			_pos.x += 1.5f;
 		}
 	}
 
@@ -80,9 +82,14 @@ public class Bullet : MonoBehaviour {
 		else
 		{
 			string tag = other.transform.tag;
-			if( tag == TagAux.BASE_TAG || tag == TagAux.PLAYER_TAG  || tag == TagAux.PLAYER_IA_TAG )
+			if( tag == TagAux.BASE_TAG || tag == TagAux.PLAYER_TAG  || 
+			    tag == TagAux.PLAYER_IA_TAG )
 			{
 				life = 0;
+			}
+			else if( tag == TagAux.PLAYER_SHIELD_TAG ){
+				life = 1;
+				Destroy ( other.gameObject );
 			}
 		}
 	}

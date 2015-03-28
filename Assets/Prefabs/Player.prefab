@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474392}
   - 212: {fileID: 21248742}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 4: {fileID: 463748}
   - 60: {fileID: 6005892}
   - 114: {fileID: 11408798}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436432}
   - 212: {fileID: 21239152}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: wing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436288}
   - 212: {fileID: 21293870}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: wing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   spaceShipsStandard:
   - {fileID: 172510, guid: d48a4041970732e4e81b07df4d6db334, type: 2}
   spaceShipPower:
-  - {fileID: 127922, guid: b4e2ea0a2d69e4e67baaf9f433d92250, type: 2}
+  - {fileID: 107352, guid: 3c4f8e46786634ccaa3d4cf693efeced, type: 2}
   rechargeTimeStandard: 0
   rechargeTimePower: 0
   speed: 0
