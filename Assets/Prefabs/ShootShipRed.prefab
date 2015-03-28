@@ -228,10 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0a3347b25e7ef48b9ffd64c2ecb9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .75
+  speed: 2.5
   frequency: 5
-  magnitude: .75
-  life: 0
+  magnitude: .5
+  life: 1
   direction: 0
 --- !u!212 &21205642
 SpriteRenderer:
