@@ -8,6 +8,8 @@ TagManager:
   - IA
   - Base
   - Shield
+  - UICD
+  - UISD
   layers:
   - Default
   - TransparentFX
