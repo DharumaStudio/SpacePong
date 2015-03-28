@@ -62,7 +62,8 @@ public class BoardManager : MonoBehaviour {
 
 			GameObject instantiate = Instantiate( playerBase, spanwPosition, Quaternion.identity ) as GameObject;
 			GameObject iaInstantiate = Instantiate( iaBase, spanwPosition * -1.0f, Quaternion.identity ) as GameObject;
-
+			instantiate.tag = "Base";
+			iaInstantiate.tag = "Base";
 			instantiate.transform.SetParent( _basePlayerTransform );
 			iaInstantiate.transform.SetParent( _baseIaTransform );
 		}

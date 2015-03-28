@@ -228,10 +228,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0a3347b25e7ef48b9ffd64c2ecb9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.25
+  speed: .75
   frequency: 5
-  magnitude: 1.25
-  isEnemy: 1
+  magnitude: .75
   life: 0
   direction: 0
 --- !u!212 &21205642

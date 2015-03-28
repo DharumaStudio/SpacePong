@@ -24,9 +24,9 @@ public abstract class Entity : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Start () {
 
-		if( rechargeTimeStandard == 0 ) rechargeTimeStandard = 5.0f;
-		if( rechargeTimePower == 0 ) rechargeTimePower = 10.0f;
-		if( speed == 0 ) speed = 10.0f;
+		if( rechargeTimeStandard == 0 ) rechargeTimeStandard = 1.5f;
+		if( rechargeTimePower == 0 ) rechargeTimePower = 4f;
+		if( speed == 0 ) speed = 10f;
 	}
 	
 	// Update is called once per frame
@@ -48,24 +48,22 @@ public abstract class Entity : MonoBehaviour {
 		GameObject spaceShip = null;
 		
 		SpaceShipType spaceShipType = _getSpaceShipType();
-		
+		Debug.Log (spaceShipType);
 		switch( spaceShipType )
 		{
 		case SpaceShipType.STANDARD:
-			spaceShip = spaceShipsStandard[Random.Range(0, spaceShipsStandard.Length)];
+			spaceShip = spaceShipsStandard[0];
+			Instantiate ( spaceShip, shooterPos, spaceShip.transform.rotation );
+			currentRechargeTime = 0;
 			break;
 		case SpaceShipType.POWER:
-			spaceShip = spaceShipPower[Random.Range(0, spaceShipPower.Length)];
-			break;
-			
-		case SpaceShipType.NONE:
-			Debug.LogError("Error fire ship");
+			spaceShip = spaceShipPower[0];
+			Instantiate ( spaceShip, shooterPos, spaceShip.transform.rotation );
+			currentRechargeTime = 0;
 			break;
 		}
 		
-		Instantiate ( spaceShip, shooterPos, spaceShip.transform.rotation );
-		
-		currentRechargeTime = 0;
+
 	}
 
 	protected virtual void limitMovement()
