@@ -231,7 +231,7 @@ MonoBehaviour:
   speed: .75
   frequency: 5
   magnitude: 1.25
-  life: 0
+  life: 2
   direction: 1
 --- !u!212 &21229772
 SpriteRenderer:

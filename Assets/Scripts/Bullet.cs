@@ -24,8 +24,6 @@ public class Bullet : MonoBehaviour {
 
 	public void deductLife( int deduct )
 	{
-		Debug.Log ( "Deduct:"+deduct);
-		Debug.Log ( "Life:"+life);
 		life -= deduct;
 	}
 	
@@ -59,7 +57,6 @@ public class Bullet : MonoBehaviour {
 
 	private void OnCollisionEnter2D( Collision2D other )
 	{
-		Debug.Log ("enter");
 		int layer = other.gameObject.layer;
 		int currentLife = life;
 
