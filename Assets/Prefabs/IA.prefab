@@ -155,7 +155,7 @@ MonoBehaviour:
   spaceShipsStandard:
   - {fileID: 116832, guid: 63616ced01edd0e48abffccd75a5f1c1, type: 2}
   spaceShipPower:
-  - {fileID: 116832, guid: 63616ced01edd0e48abffccd75a5f1c1, type: 2}
+  - {fileID: 195808, guid: eaee9162f0f1645bfbab0912d89759c5, type: 2}
   rechargeTimeStandard: 0
   rechargeTimePower: 0
   speed: 0
