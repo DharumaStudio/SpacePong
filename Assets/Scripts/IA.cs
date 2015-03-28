@@ -15,7 +15,7 @@ public class IA : Entity {
 		if( rechargeTimePower == 0 ) rechargeTimePower = 2f;
 		myTransform = this.transform;
 		_elapsedTime = 0f;
-		_timeToAct = 1f;
+		_timeToAct = 3f;
 		_isMoving = false;
 	}
 
@@ -24,7 +24,6 @@ public class IA : Entity {
 		GameObject iaInstance = this.gameObject;
 		currentRechargeTime += Time.deltaTime;
 		_elapsedTime += Time.deltaTime;
-
 		if (_isMoving) {
 			float step = speed * Time.deltaTime;
 			
@@ -40,18 +39,23 @@ public class IA : Entity {
 					fireShip ();
 					_elapsedTime = 0f;
 				}
-				Debug.Log ("===============");
+
 			}
-		}else if (_elapsedTime >= _timeToAct) {
-			Debug.Log ("+++++++++++++++");
-			_closest = _getClosestObject (this.gameObject, "PlayerBullet");
+			else
+			{
+				_isMoving = false;
+				_elapsedTime = 0f;
+			}
+		}
+		else if (_elapsedTime >= _timeToAct && !_isMoving) 
+		{
+			_closest = _getClosestObject (this.gameObject, TagAux.PLAYER_BULLET_TAG);
 			if(_closest){
 				_targetY = (int)_closest.transform.position.y;
 				_isMoving = true;
 			}
 			_elapsedTime = 0f;
 		}
-		Debug.Log (_elapsedTime);
 	}
 
 	public override void MovementBattleShip()
@@ -75,6 +79,7 @@ public class IA : Entity {
 			{
 				closestObject = obj;
 			}
+
 		}
 		
 		return closestObject;

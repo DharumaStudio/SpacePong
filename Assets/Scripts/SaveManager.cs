@@ -21,7 +21,6 @@ public class SaveManager : MonoBehaviour {
 
 			if( currentTotalTime < betterTime || betterTime == 0 )
 			{
-				Debug.Log ("new record");
 				PlayerPrefs.SetFloat( BEST_TIME, currentTotalTime );
 			}
 

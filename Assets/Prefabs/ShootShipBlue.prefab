@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 480062}
   - 212: {fileID: 21218404}
   - 95: {fileID: 9503920}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PropulsionFireLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 445162}
   - 212: {fileID: 21270218}
   - 95: {fileID: 9529552}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PropulsionFireCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - 60: {fileID: 6016930}
   - 50: {fileID: 5007310}
   - 114: {fileID: 11456020}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: ShootShipBlue
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - 4: {fileID: 452110}
   - 212: {fileID: 21273734}
   - 95: {fileID: 9596306}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: PropulsionFireRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

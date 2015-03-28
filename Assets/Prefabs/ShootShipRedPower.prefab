@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21283724}
   - 95: {fileID: 9509134}
   - 58: {fileID: 5822448}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shield
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 4: {fileID: 488984}
   - 212: {fileID: 21225714}
   - 95: {fileID: 9509028}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: PropulsionFireRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - 4: {fileID: 450330}
   - 212: {fileID: 21266994}
   - 95: {fileID: 9509412}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: PropulsionFireLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 4: {fileID: 449670}
   - 212: {fileID: 21232322}
   - 95: {fileID: 9560080}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: PropulsionFireCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,9 +81,9 @@ GameObject:
   - 60: {fileID: 6070920}
   - 50: {fileID: 5015510}
   - 114: {fileID: 11482820}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: ShootShipRedPower
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

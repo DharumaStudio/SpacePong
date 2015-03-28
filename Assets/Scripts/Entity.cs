@@ -48,7 +48,6 @@ public abstract class Entity : MonoBehaviour {
 		GameObject spaceShip = null;
 		
 		SpaceShipType spaceShipType = _getSpaceShipType();
-		Debug.Log (spaceShipType);
 		switch( spaceShipType )
 		{
 		case SpaceShipType.STANDARD:
