@@ -4,6 +4,7 @@ using System.Collections;
 public class BoardManager : MonoBehaviour {
 
 
+	#region Public variables
 	public GameObject iaBase;
 	public GameObject playerBase;
 
@@ -12,18 +13,28 @@ public class BoardManager : MonoBehaviour {
 
 	public int iaLife;
 	public int playerLife;
+	#endregion
 
+	#region Private variables
 	private Transform _basePlayerTransform;
 	private Transform _baseIaTransform;
 
 	private const float BASE_SIZE = 0.91f;
+	#endregion
 
-
+	/// <summary>
+	/// Gets the ia life.
+	/// </summary>
+	/// <returns>The ia life.</returns>
 	public int GetIaLife()
 	{
 		return iaLife;
 	}
 
+	/// <summary>
+	/// Gets the player life.
+	/// </summary>
+	/// <returns>The player life.</returns>
 	public int GetPlayerLife()
 	{
 		return playerLife;

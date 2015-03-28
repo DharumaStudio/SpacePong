@@ -4,21 +4,20 @@ using UnityEngine.UI;
 
 public class EndUi : MonoBehaviour {
 
-
+	#region public variables
 	public Text betterTimeText;
 	public Text currentTimeText;
 	public Text endText;
+	#endregion
 
 	// Use this for initialization
 	void Start () {
 		_printInterface();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+	/// <summary>
+	/// Precalculate the interface result
+	/// </summary>
 	private void _printInterface()
 	{
 		bool playerWon = SaveManager.GetPlayerWon();
@@ -49,6 +48,11 @@ public class EndUi : MonoBehaviour {
 
 	}
 
+	/// <summary>
+	/// Convert the time variables to string read for humans.
+	/// </summary>
+	/// <returns>The time.</returns>
+	/// <param name="timer">Timer.</param>
 	private string _stringfyTime( float timer )
 	{
 		if( timer > 0 )

@@ -32,6 +32,9 @@ public class MeteorManager : MonoBehaviour {
 	
 	}
 
+	/// <summary>
+	/// Draw a meteor in a random place into the camera limits
+	/// </summary>
 	private void _generateMeteors()
 	{
 		GameObject meteor = meteors[Random.Range( 0, meteors.Length )];

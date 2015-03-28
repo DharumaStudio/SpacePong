@@ -3,8 +3,10 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	#region private variables
 	private BoardManager _boardManager;
 	private UIManager _uiManager;
+	#endregion
 
 	// Use this for initialization
 	private void Start () 
@@ -19,6 +21,9 @@ public class GameManager : MonoBehaviour {
 		_endGame();
 	}
 
+	/// <summary>
+	/// Calculate if the game end, and end the game
+	/// </summary>
 	private void _endGame()
 	{
 		int playerLife = _boardManager.GetPlayerLife();

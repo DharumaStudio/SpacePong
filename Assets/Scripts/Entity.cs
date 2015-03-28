@@ -3,16 +3,23 @@ using System.Collections;
 
 public abstract class Entity : MonoBehaviour {
 
-
+	#region public variables
 	public GameObject[] spaceShipsStandard;
 	public GameObject[] spaceShipPower;
 
 	public float rechargeTimeStandard;
 	public float rechargeTimePower;
 	public float speed;
+	#endregion
 
+	#region protected variables
 	protected float currentRechargeTime;
 	protected Transform myTransform;
+	#endregion
+
+
+	abstract public void SpawnSpaceShip();
+	abstract public void MovementBattleShip();
 
 	public enum SpaceShipType
 	{
@@ -35,9 +42,6 @@ public abstract class Entity : MonoBehaviour {
 		MovementBattleShip();
 		SpawnSpaceShip();
 	}
-
-	abstract public void SpawnSpaceShip();
-	abstract public void MovementBattleShip();
 
 	/// <summary>
 	/// Fires a player bullet.
@@ -65,6 +69,9 @@ public abstract class Entity : MonoBehaviour {
 
 	}
 
+	/// <summary>
+	/// Limits the movement of entities in the camera.
+	/// </summary>
 	protected virtual void limitMovement()
 	{
 		PolygonCollider2D collider = myTransform.GetComponent<PolygonCollider2D>();
@@ -74,6 +81,10 @@ public abstract class Entity : MonoBehaviour {
 		myTransform.position = new Vector2( transform.position.x, limitY );
 	}
 
+	/// <summary>
+	/// Get the type of spaceship.
+	/// </summary>
+	/// <returns>The space ship type.</returns>
 	private SpaceShipType _getSpaceShipType()
 	{
 		SpaceShipType type = SpaceShipType.NONE;

@@ -3,12 +3,18 @@ using System.Collections;
 
 public class Player : Entity {
 
+	/// <summary>
+	/// Start this instance.
+	/// </summary>
 	protected override void Start ()
 	{
 		base.Start ();
 		myTransform = this.transform;
 	}
 
+	/// <summary>
+	/// Spawns the space ship.
+	/// </summary>
 	public override void SpawnSpaceShip()
 	{
 		currentRechargeTime += Time.deltaTime;
@@ -21,6 +27,9 @@ public class Player : Entity {
 		#endif
 	}
 
+	/// <summary>
+	/// Movements the battle ship.
+	/// </summary>
 	public override void MovementBattleShip()
 	{
 		float vertical = 0.0f;
