@@ -14,7 +14,7 @@ public class Meteor : MonoBehaviour
 	// Use this for initialization
 	private void Start ()
 	{
-
+		//Print meteors in the Start and End Screen randomize.
 		Edge edge = (Edge)Random.Range( (int)Edge.LEFT, (int)Edge.BOTTOM );
 		Vector2 force = Vector2.right;
 
@@ -42,6 +42,9 @@ public class Meteor : MonoBehaviour
 	
 	}
 
+	/// <summary>
+	/// Raises the became invisible event.
+	/// </summary>
 	private void OnBecameInvisible ()
 	{
 		Destroy ( this.gameObject );

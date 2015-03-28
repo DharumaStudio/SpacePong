@@ -52,6 +52,10 @@ public class SaveManager : MonoBehaviour {
 		
 	}
 
+	/// <summary>
+	/// Gets the player current time.
+	/// </summary>
+	/// <returns>The player current time.</returns>
 	public static float GetPlayerCurrentTime()
 	{
 		float playerTime = PlayerPrefs.GetFloat( CURRENT_TIME, 0 );
@@ -60,11 +64,21 @@ public class SaveManager : MonoBehaviour {
 		return playerTime;		
 	}
 
+	/// <summary>
+	/// Aux function to convert Boolean to integer
+	/// </summary>
+	/// <returns>The to int.</returns>
+	/// <param name="value">If set to <c>true</c> value.</param>
 	private static int _boolToInt( bool value )
 	{
 		return ( value ) ? 1 : 0;
 	}
-	
+
+	/// <summary>
+	/// Aux function to convert integer to boolean
+	/// </summary>
+	/// <returns><c>true</c>, if to bool was _inted, <c>false</c> otherwise.</returns>
+	/// <param name="value">Value.</param>
 	private static bool _intToBool( int value )
 	{
 		return ( value == 0 ) ? false : true;

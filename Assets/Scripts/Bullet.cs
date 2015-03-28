@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
+	#region public variables
 	public enum Direction { LEFT, RIGHT }
 
 	public float speed = 2.5f;
@@ -12,21 +13,34 @@ public class Bullet : MonoBehaviour {
 	public int life;
 
 	public Direction direction = Direction.LEFT;
+	#endregion
 
+	#region private variables
 	private Vector3 _axis;
 	private Vector3 _pos;
+	#endregion
 
-
+	/// <summary>
+	/// Gets the life.
+	/// </summary>
+	/// <returns>The life.</returns>
 	public int getLife()
 	{
 		return life;
 	}
 
+	/// <summary>
+	/// Deducts the life.
+	/// </summary>
+	/// <param name="deduct">Deduct.</param>
 	public void deductLife( int deduct )
 	{
 		life -= deduct;
 	}
-	
+
+	/// <summary>
+	/// Set params by default.
+	/// </summary>
 	private void Awake () {
 		_pos = transform.position;
 
@@ -42,21 +56,30 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
+	// Use this for initialization
 	private void Start()
 	{
 		if( life == 0 ) life = 1;
 	}
-	
+
+	// Update is called once per frame 
 	private void FixedUpdate () {
 		_pos += transform.up * Time.deltaTime * speed;
 		transform.position = _pos + _axis * Mathf.Sin ( Time.time * frequency ) * magnitude;
 	}
 
+	/// <summary>
+	/// Raises the became invisible event.
+	/// </summary>
 	private void OnBecameInvisible()
 	{
 		Destroy ( this.gameObject );
 	}
 
+	/// <summary>
+	/// Raises the collision enter2 d event.
+	/// </summary>
+	/// <param name="other">Other.</param>
 	private void OnCollisionEnter2D( Collision2D other )
 	{
 		int layer = other.gameObject.layer;
@@ -94,6 +117,7 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
+	// Update is called once per frame
 	private void Update()
 	{
 		if( life <= 0 )

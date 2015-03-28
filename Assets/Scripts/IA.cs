@@ -3,27 +3,44 @@ using System.Collections;
 
 public class IA : Entity {
 
-	private float _elapsedTime;
-	private float _timeToAct;
-	private bool _isMoving;
-	private GameObject _closest;
-	private int _targetY;
+
+	#region public variables
+		private float timeToAct;
+	#endregion
+
+	#region private variables
+		private float _elapsedTime;
+		private bool _isMoving;
+		private GameObject _closest;
+		private int _targetY;
+	#endregion
+
+	/// <summary>
+	/// Initialize parameters.
+	/// </summary>
 	protected override void Start ()
 	{
 		base.Start ();
+
 		if( rechargeTimeStandard == 0 ) rechargeTimeStandard = 1f;
 		if( rechargeTimePower == 0 ) rechargeTimePower = 2f;
+		if( timeToAct == 0 ) timeToAct = 3f;
+
 		myTransform = this.transform;
+
 		_elapsedTime = 0f;
-		_timeToAct = 3f;
 		_isMoving = false;
 	}
 
+	/// <summary>
+	/// Spawns the space ship.
+	/// </summary>
 	public override void SpawnSpaceShip()
 	{
 		GameObject iaInstance = this.gameObject;
 		currentRechargeTime += Time.deltaTime;
 		_elapsedTime += Time.deltaTime;
+
 		if (_isMoving) {
 			float step = speed * Time.deltaTime;
 			
@@ -34,7 +51,7 @@ public class IA : Entity {
 				
 				iaInstance.transform.position = new Vector3 (pos.x, towards.y, 0);
 
-				if ( (_targetY == (int)iaInstance.transform.position.y )|| (_elapsedTime >= (_timeToAct*1.5f))){
+				if ( (_targetY == (int)iaInstance.transform.position.y )|| (_elapsedTime >= (timeToAct*1.5f))){
 					_isMoving = false;
 					fireShip ();
 					_elapsedTime = 0f;
@@ -47,7 +64,14 @@ public class IA : Entity {
 				_elapsedTime = 0f;
 			}
 		}
-		else if (_elapsedTime >= _timeToAct && !_isMoving) 
+	}
+
+	/// <summary>
+	/// Movements the IA battle ship.
+	/// </summary>
+	public override void MovementBattleShip()
+	{
+		if (_elapsedTime >= timeToAct && !_isMoving) 
 		{
 			_closest = _getClosestObject (this.gameObject, TagAux.PLAYER_BULLET_TAG);
 			if(_closest){
@@ -56,13 +80,16 @@ public class IA : Entity {
 			}
 			_elapsedTime = 0f;
 		}
-	}
 
-	public override void MovementBattleShip()
-	{
 		limitMovement();
 	}
 
+	/// <summary>
+	/// Calculate the closest enemy spaceship
+	/// </summary>
+	/// <returns>The closest object.</returns>
+	/// <param name="observer">Ia Object</param>
+	/// <param name="tag">Tag to find the closest object</param>
 	private GameObject _getClosestObject( GameObject observer, string tag )
 	{
 		GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag( tag );
@@ -73,7 +100,7 @@ public class IA : Entity {
 			{
 				closestObject = obj;
 			}
-			//compares distances
+			//Compares distances
 			if( Vector3.Distance( observer.transform.position, obj.transform.position ) <= 
 			   Vector3.Distance( observer.transform.position, closestObject.transform.position ) )
 			{
