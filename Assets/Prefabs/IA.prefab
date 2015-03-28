@@ -152,8 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3efd4b1be0e544e6da596f345eddcb16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceShipsStandard: []
-  spaceShipPower: []
+  spaceShipsStandard:
+  - {fileID: 116832, guid: 63616ced01edd0e48abffccd75a5f1c1, type: 2}
+  spaceShipPower:
+  - {fileID: 116832, guid: 63616ced01edd0e48abffccd75a5f1c1, type: 2}
   rechargeTimeStandard: 0
   rechargeTimePower: 0
   speed: 0
